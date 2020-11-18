@@ -1,0 +1,29 @@
+{% extends "0base.html" %}
+
+{% load static %}
+
+{% block title %} Language Lessons  {% endblock %}
+
+{%block content%}  
+    
+    <div class="container mt-4">
+        <a href="{% url 'cursos' %}" class="btn btn-primary px-4 py-3 mb-5">Go back to all Courses</a>
+    
+    
+        <div class="row">
+            {% for i in lista_languages  %}
+                <div class="col-md-3 mx-auto">    
+                    <div class="card text-center">
+                        <img class="card-img-top" src="{{i.imagen.url}}">
+                        <div class="card-body">
+                            <a href="{{ i.get_absolute_url }}"><h5 class="card-title">{{i.titulo}}</h5></a>
+                            <p class="card-text text-left">{{i.overview}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}                                
+        </div>
+  
+    </div>
+    <br>
+{% endblock %}

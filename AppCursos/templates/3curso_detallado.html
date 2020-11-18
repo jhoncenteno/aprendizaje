@@ -1,0 +1,58 @@
+{% extends "0base.html" %}
+
+{% load static %}
+
+{% block title %} Course detail {% endblock %}
+
+{%block content%}  
+    <div class="container mb-5  mt-4">    
+    
+        {% for i in curso.categorias.all %}
+            {% if i.nombre == 'Arts' %}
+                
+                    <a href="{% url 'arts' %}" class="btn btn-primary px-4 py-3 mb-5">Go back to Art Courses</a>
+                
+            {% elif i.nombre == 'Languages' %}
+                
+                    <a href="{% url 'languages' %}" class="btn btn-primary px-4 py-3 mb-5">Go back to Languages Courses</a>
+                
+            {% endif %}
+        {% endfor %}
+
+        <h2>{{curso.titulo}}</h2>
+        <p> {{curso.fecha}}</p>
+        <p> {{curso.contenido|safe}} </p> 
+
+        <hr>
+
+        <h3 class="mb-5">Lesson Comments ({{curso.comments.count}})</h3>
+        {% for e in curso.get_comments  %}
+        
+            <div class="comment">
+                <strong>{{ e.usuario }}</strong>
+                <p>{{ e.fecha|timesince }} ago</p>
+                <div class="comment-body mb-5">
+                    <p>{{ e.content }}</p>
+                </div>
+            </div>
+
+        {% endfor %}
+        <hr>
+        {% if request.user.is_authenticated %}
+            <h2>Leave us a comment</h2>
+            <form method="POST" action="."> 
+            {% csrf_token %}
+                <div class="row">
+                    <div class="form-group col-12 col-lg-10 ">
+                        {{ formulario }}
+                    </div>
+                </div>
+                <button type="submit"> Leave comment </button>
+            </form>
+        {% else %}
+            <a href="{% url 'account_login' %}" >Log in to comment</a>
+        {% endif %}
+    </div>
+    
+
+{% endblock %}

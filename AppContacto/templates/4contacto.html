@@ -1,0 +1,69 @@
+{% extends "0base.html" %}
+
+{% load static %}
+
+{% block title %} Contact {% endblock %}
+
+{%block content%} 
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-2 bread">Contact Us</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section contact-section">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+          <div class="col-md-10 d-flex mx-auto">
+          	<div class="bg-light align-self-stretch box p-4 text-center">
+          		<h3 class="mb-4">Address</h3>
+	            <div style="width: 100%;position: relative;">
+                <iframe width="100%" height="300" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=venezuela%2C%20caracas+(Titre)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
+                  <small style="line-height: 1.8;font-size: 0.15vw;background: #fff;">Powered by <a href="http://www.googlemapsgenerator.com/fr/">Googlemapsgenerator.com/fr/</a> & <a href="https://www.theparacast.com/">buy targeted traffic to your website</a></small>
+                </div>
+                <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+              </div>
+	          </div>
+          </div>
+        </div>
+        <div class="row d-flex mb-5 contact-info">
+          <div class="col-md-4 d-flex mx-auto">
+          	<div class="bg-light align-self-stretch box p-4 text-center">
+          		<h3 class="mb-4">Contact Number</h3>
+	            <p><a href="tel:+584120814842">+ 58 412 0814842</a></p>
+	          </div>
+          </div>
+          <div class="col-md-4 d-flex mx-auto">
+          	<div class="bg-light align-self-stretch box p-4 text-center">
+          		<h3 class="mb-4">Email Address</h3>
+	            <p><a href="mailto:centenojhon100598@gmail.com">centenojhon100598@gmail.com</a></p>
+	          </div>
+          </div>
+          <div class="col-md-4 d-flex mx-auto">
+          	<div class="bg-light align-self-stretch box p-4 text-center">
+          		<h3 class="mb-4">Website</h3>
+	            <p><a href="https://github.com/jhoncenteno">github.com/jhoncenteno</a></p>
+	          </div>
+          </div>
+        </div>
+      </div>
+        <div class="container mb-5">
+
+            <p>If you have any question, please contact us</p>
+            <a class="btn btn-info" href="mailto:centenojhon100598@gmail.com"> Send email</a>
+           
+            
+        </div>
+    </section>
+
+
+
+{% endblock %}
